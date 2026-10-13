@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="minimal-white">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="x-content-type" content="presentation" />
+<meta name="x-presentation-version" content="1.0" />
+<meta name="x-presentation-indicator" content="deck-stage .slide" />
+<title>Helping Behavior Experiment</title>
+<link rel="stylesheet" href="./_shared/fonts.css">
+<link rel="stylesheet" href="./_shared/base.css">
+<link id="theme-link" rel="stylesheet" href="./_shared/themes/minimal-white.css">
+<link rel="stylesheet" href="./_shared/animations/animations.css">
+<style>
+  .bilingual-en { font-size: 0.6em; color: var(--text-3); font-weight: 400; display: block; margin-top: 6px; letter-spacing: 0.02em; }
+  .bilingual-cn { font-size: 0.55em; color: var(--text-2); font-weight: 400; display: block; margin-top: 3px; }
+  .tag { display:inline-block; padding:4px 14px; border-radius:999px; font-size:14px; font-weight:600; background:var(--bg-soft); color:var(--accent); }
+  .result-row { display:flex; align-items:center; gap:20px; padding:18px 0; border-bottom:1px solid var(--border); }
+  .result-row:last-child { border-bottom:none; }
+  .result-icon { font-size:36px; width:50px; text-align:center; flex-shrink:0; }
+  .result-text { flex:1; }
+  .result-text .rlabel { font-size:20px; font-weight:600; color:var(--text-1); }
+  .result-text .rdesc { font-size:16px; color:var(--text-3); margin-top:4px; }
+  .result-num { font-size:38px; font-weight:700; color:var(--accent); }
+  .mini-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:22px 26px; box-shadow:var(--shadow); }
+  .mini-card .mc-label { font-size:14px; font-weight:600; color:var(--accent); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:8px; }
+  .mini-card .mc-content { font-size:17px; color:var(--text-2); line-height:1.65; }
+  .limit-box { background:var(--surface-2); border-left:3px solid var(--accent-2); border-radius:0 8px 8px 0; padding:18px 22px; margin:10px 0; }
+  .limit-box .lb-title { font-size:17px; font-weight:600; color:var(--text-1); }
+  .limit-box .lb-fix { font-size:15px; color:var(--accent); margin-top:6px; }
+  .narrow-flow { display:flex; align-items:center; gap:14px; margin-top:10px; }
+  .narrow-step { flex:1; padding:16px 20px; border-radius:10px; text-align:center; font-size:16px; }
+  .narrow-step.broad { background:var(--surface-2); color:var(--text-2); border:1px solid var(--border); }
+  .narrow-step.specific { background:var(--bg-soft); color:var(--accent); border:1px solid var(--accent); font-weight:600; }
+  .narrow-arrow { color:var(--text-3); font-size:26px; flex-shrink:0; }
+</style>
+</head>
+<body data-themes="minimal-white" data-theme-base="./_shared/themes/">
+<deck-stage width="1920" height="1080">
+
+  <!-- 1. Cover -->
+  <section class="slide" data-deck-label="Cover">
+    <div style="display:flex; align-items:center; gap:40px;">
+      <div style="flex:1;">
+        <p class="kicker" style="font-size:16px;">IGCSE Psychology · Field Experiment</p>
+        <h1 class="h1 anim-fade-up" data-anim="fade-up" style="font-size:68px; margin-bottom:8px;">
+          Would Anyone<br>Help?
+        </h1>
+        <p style="font-size:22px; color:var(--accent); font-weight:600; margin:0 0 16px 0;">当有人掉落文具，会有人帮忙吗？</p>
+        <p style="font-size:18px; color:var(--text-2); margin:0 0 28px 0; line-height:1.7;">
+          A field experiment on helping behavior among secondary school students.<br>
+          一个在学校走廊进行的助人行为实地实验。
+        </p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <span class="tag" style="font-size:15px; padding:6px 16px;">Field Experiment</span>
+          <span class="tag" style="font-size:15px; padding:6px 16px;">Opportunity Sampling</span>
+          <span class="tag" style="font-size:15px; padding:6px 16px;">G9 & G11</span>
+          <span class="tag" style="font-size:15px; padding:6px 16px;">Single Trial</span>
+        </div>
+      </div>
+      <div style="width:340px; flex-shrink:0; display:flex; flex-direction:column; gap:16px;">
+        <div class="mini-card" style="text-align:center;">
+          <div class="mc-label" style="font-size:15px;">Date</div>
+          <div style="font-size:22px; font-weight:700; color:var(--text-1);">October 2026</div>
+          <div style="font-size:14px; color:var(--text-3);">3rd period break · 第三节下课</div>
+        </div>
+        <div class="mini-card" style="text-align:center; border-color:var(--accent);">
+          <div class="mc-label" style="font-size:15px;">Group Members</div>
+          <div style="font-size:20px; font-weight:700; color:var(--accent); line-height:1.6;">
+            Joelle · Charis<br>Dexter · Selena
+          </div>
+        </div>
+        <div class="mini-card" style="text-align:center; background:var(--surface-2);">
+          <div class="mc-label" style="font-size:15px;">Research Question</div>
+          <div style="font-size:16px; color:var(--text-1); line-height:1.6;">
+            路过学生是否会主动捡起掉落的文具？
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="deck-footer"><span class="dim2">Group Members: Joelle · Charis · Dexter · Selena</span><span class="slide-number" data-current="1" data-total="7"></span></div>
+    <div class="notes">大家好，这是我们小组做的一个关于助人行为的实地实验报告。我们想研究：当有人在走廊上掉落文具时，路过的同学会不会主动帮忙？实验在十月第三节课下课加餐时间进行，参与者是九年级和十一年级学生，实验只做了一次。</div>
+  </section>
+
+  <!-- 2. Step 1: Narrow Down + Step 2: Hypothesis -->
+  <section class="slide" data-deck-label="Research Question & Hypothesis">
+    <p class="kicker">Step 1–2 · Narrow Down & Hypothesis</p>
+    <h2 class="h2" style="font-size:48px;">缩小问题 → 提出假设
+      <span class="bilingual-en">Narrowing the Question & Formulating Hypothesis</span>
+    </h2>
+
+    <!-- Step 1: Narrow down -->
+    <div class="mini-card mt-l">
+      <div class="mc-label">Step 1 · Narrow Down Research Question</div>
+      <div class="narrow-flow">
+        <div class="narrow-step broad">
+          助人行为<br><span style="font-size:11px;">Helping behavior (太广 too broad)</span>
+        </div>
+        <div class="narrow-arrow">→</div>
+        <div class="narrow-step broad">
+          走廊上的助人<br><span style="font-size:11px;">Helping in corridors</span>
+        </div>
+        <div class="narrow-arrow">→</div>
+        <div class="narrow-step specific">
+          路过学生是否会捡起掉落的文具？<br><span style="font-size:11px;">Will passing students pick up dropped stationery?</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2: Hypothesis -->
+    <div class="grid g2 mt-l" style="gap:20px;">
+      <div class="mini-card" style="border-color:var(--accent); box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 12%,transparent),var(--shadow);">
+        <div class="mc-label">Step 2 · Directional Hypothesis · 方向性假设</div>
+        <div class="mc-content" style="font-size:18px; color:var(--text-1);">
+          多数旁观学生<strong>不会</strong>主动捡起文具，仅少数物理距离较近者会行动。
+          <br><span style="font-size:14px; color:var(--text-3);">Most bystanders will <strong>not</strong> pick up the items; only those in close proximity will act.</span>
+        </div>
+      </div>
+      <div class="mini-card">
+        <div class="mc-label">Theoretical Basis · 理论依据</div>
+        <div class="mc-content" style="font-size:18px; color:var(--text-1);">
+          Diffusion of Responsibility（责任分散）+ Pluralistic Ignorance（多数无知）
+          <br><span style="font-size:14px; color:var(--text-3);">More people present → less individual responsibility; looking at others' inaction → concluding help isn't needed</span>
+        </div>
+      </div>
+    </div>
+    <div class="deck-footer"><span class="dim2">Slide 2 / 7</span></div>
+    <div class="notes">第一步是缩小研究问题。一开始"助人行为"太大了，我们缩小到"走廊上的助人"，再缩小到具体可操作的问题："路过的学生会不会捡起掉落的文具？" 第二步是提出方向性假设：多数人不会帮忙，只有离得近的人可能会。理论依据是课上学的两个概念：责任分散——在场人越多每个人责任感越低；多数无知——看到别人都不动就以为不需要帮忙。</div>
+  </section>
+
+  <!-- 3. Step 3: Method -->
+  <section class="slide" data-deck-label="Method">
+    <p class="kicker">Step 3 · Research Method</p>
+    <h2 class="h2" style="font-size:42px;">研究方法
+      <span class="bilingual-en">Research Method</span>
+    </h2>
+    <div class="grid g2" style="gap:16px; margin-top:16px;">
+      <div class="mini-card" style="padding:14px 18px;">
+        <div class="mc-label" style="font-size:13px;">Sampling · 抽样</div>
+        <div class="mc-content" style="font-size:15px;">
+          <strong>机会抽样</strong>：G9 与 G11 学生 · 第三节下课 · 走廊 · 约 5–15 人
+          <br><span style="font-size:13px; color:var(--text-3);">Opportunity sampling: G9 & G11, 3rd period break, corridor</span>
+        </div>
+      </div>
+      <div class="mini-card" style="padding:14px 18px; border-color:var(--accent);">
+        <div class="mc-label" style="font-size:13px;">Data Collection · 数据收集</div>
+        <div class="mc-content" style="font-size:15px;">
+          两位组员用 <strong>iPad 拍视频</strong>记录旁观者反应（注意/停下/帮忙）
+          <br><span style="font-size:13px; color:var(--text-3);">2 members filmed with iPads — Observational · Qualitative</span>
+        </div>
+      </div>
+    </div>
+    <div class="grid g2" style="gap:16px; margin-top:14px;">
+      <div class="mini-card" style="padding:14px 18px;">
+        <div class="mc-label" style="font-size:13px;">IV · 自变量</div>
+        <div class="mc-content" style="font-size:15px;">
+          是否发生"文具掉落"事件
+          <br><span style="font-size:13px; color:var(--text-3);">Drop event vs. no-drop (control)</span>
+        </div>
+      </div>
+      <div class="mini-card" style="padding:14px 18px;">
+        <div class="mc-label" style="font-size:13px;">DV · 因变量</div>
+        <div class="mc-content" style="font-size:15px;">
+          旁观者是否主动帮忙（是/否）
+          <br><span style="font-size:13px; color:var(--text-3);">Whether bystanders help (yes/no)</span>
+        </div>
+      </div>
+    </div>
+    <div class="mini-card" style="padding:14px 18px; margin-top:14px;">
+      <div class="mc-label" style="font-size:13px;">Procedure · 实验流程</div>
+      <div class="mc-content" style="font-size:15px;">
+        实验者抱文具（书、纸张、笔）走走廊 → 同谋者迎面相撞 → 文具散落 → 两位组员 iPad 拍视频记录 → 实验仅执行一次
+        <br><span style="font-size:13px; color:var(--text-3);">Experimenter carried stationery → confederate bumped → items scattered → 2 members filmed → single trial</span>
+      </div>
+    </div>
+    <div class="deck-footer"><span class="dim2">Slide 3 / 7</span></div>
+    <div class="notes">第三步是研究方法。抽样用机会抽样——谁经过就算谁，是九年级和十一年级学生，时间是第三节下课加餐时间，地点走廊，大概5到15人经过。数据收集方式是两位小组成员用 iPad 拍视频记录。自变量是"有没有文具掉落事件"，因变量是"旁观者有没有帮忙"。流程：我抱着文具走走廊，小组成员迎面撞我，文具散落，两位组员用 iPad 拍视频，实验只做了一次。</div>
+  </section>
+
+  <!-- 4. Results -->
+  <section class="slide" data-deck-label="Results">
+    <p class="kicker">Step 4a · Results</p>
+    <h2 class="h2" style="font-size:48px;">实验结果
+      <span class="bilingual-en">Results</span>
+    </h2>
+    <div class="mt-l">
+      <div class="result-row">
+        <div class="result-icon">👁️</div>
+        <div class="result-text">
+          <div class="rlabel">注意到文具掉落 · Noticed the event</div>
+          <div class="rdesc">多数路过的学生看了一眼，但继续走 — Most passersby glanced but kept walking</div>
+        </div>
+        <div class="result-num">~ Majority</div>
+      </div>
+      <div class="result-row">
+        <div class="result-icon">🚶</div>
+        <div class="result-text">
+          <div class="rlabel">停下脚步观察 · Stopped to observe</div>
+          <div class="rdesc">少数学生放慢脚步但没有进一步行动 — A few slowed down but did not act</div>
+        </div>
+        <div class="result-num">~ Few</div>
+      </div>
+      <div class="result-row" style="border-color:var(--accent);">
+        <div class="result-icon">🤝</div>
+        <div class="result-text">
+          <div class="rlabel" style="color:var(--accent);">主动帮忙 · Actively helped</div>
+          <div class="rdesc">仅 1 位物理位置较近的同学放下饮料，帮忙捡起文具 — Only 1 nearby student put down drink & helped</div>
+        </div>
+        <div class="result-num" style="color:var(--accent);">1</div>
+      </div>
+    </div>
+    <div class="mini-card mt-l" style="background:var(--bg-soft); border-style:dashed;">
+      <div class="mc-content" style="font-size:17px; color:var(--text-2);">
+        <strong>结果与假设一致：</strong>多数学生注意到了但不行动，仅一位近距离的同学伸出援手。
+        <br><span style="font-size:14px; color:var(--text-3);">Result is consistent with the directional hypothesis: most noticed but did not act; only one nearby student helped.</span>
+      </div>
+    </div>
+    <div class="deck-footer"><span class="dim2">Slide 4 / 7</span></div>
+    <div class="notes">结果：大多数人注意到了——看了一眼但继续走。少数人放慢了脚步但没有行动。只有 1 个人真正帮忙——他是物理位置最近的，当时手里拿着饮料，他放下饮料来捡文具。结果和我们的假设一致。</div>
+  </section>
+
+  <!-- 5. Step 4b: Analysis -->
+  <section class="slide" data-deck-label="Analysis">
+    <p class="kicker">Step 4b · Analysis</p>
+    <h2 class="h2" style="font-size:48px;">分析：为什么大家不帮忙？
+      <span class="bilingual-en">Analysis: Why Didn't They Help?</span>
+    </h2>
+    <div class="grid g2 mt-l" style="gap:24px;">
+      <div class="mini-card">
+        <div class="mc-label">责任分散 · Diffusion of Responsibility</div>
+        <div class="mc-content">
+          在场人数越多，每个人感受到的责任越低——"总会有人帮的"。
+          <br><span style="font-size:14px; color:var(--text-3);">More people present → each person feels less individual responsibility to act.</span>
+        </div>
+      </div>
+      <div class="mini-card">
+        <div class="mc-label">物理距离 · Physical Proximity</div>
+        <div class="mc-content">
+          唯一帮忙者是最近的——支持"距离越近，助人可能性越大"。
+          <br><span style="font-size:14px; color:var(--text-3);">The only helper was the nearest — supporting proximity-effect link.</span>
+        </div>
+      </div>
+      <div class="mini-card">
+        <div class="mc-label">评价顾虑 · Evaluation Apprehension</div>
+        <div class="mc-content">
+          走廊是公共空间，学生可能担心"帮了反而被围观/尴尬"。
+          <br><span style="font-size:14px; color:var(--text-3);">Public corridor may trigger fear of being judged for acting.</span>
+        </div>
+      </div>
+      <div class="mini-card">
+        <div class="mc-label">多数无知 · Pluralistic Ignorance</div>
+        <div class="mc-content">
+          每个人可能想"该帮吗？"，但看到别人都没动 → 误以为"不需要帮" → 自己也不动。不是情境模糊，而是<strong>用别人的不行动来定义情境</strong>。
+          <br><span style="font-size:14px; color:var(--text-3);">Each person looks at others' inaction → concludes help isn't needed → doesn't act themselves. Not ambiguity — defining the situation through others' non-response.</span>
+        </div>
+      </div>
+    </div>
+    <div class="deck-footer"><span class="dim2">Slide 5 / 7</span></div>
+    <div class="notes">第四步是分析。四个解释：第一，责任分散——在场人越多，每个人责任感越低，觉得"总有人会帮"。第二，物理距离——唯一帮忙的人是最近的，支持"越近越可能帮"。第三，评价顾虑——走廊是公共空间，学生可能怕帮了反而被关注或尴尬。第四，多数无知——每个人可能想"该帮吗"，但看到别人都没动，就误以为"不需要帮"，自己也不动。关键不是情境模糊，而是用别人的不行动来定义情境。</div>
+  </section>
+
+  <!-- 6. Limitations & Improvements -->
+  <section class="slide" data-deck-label="Limitations & Improvements">
+    <p class="kicker">Evaluation · Limitations & Improvements</p>
+    <h2 class="h2" style="font-size:48px;">局限与改进
+      <span class="bilingual-en">Limitations & Improvements</span>
+    </h2>
+    <div class="mt-l">
+      <div class="limit-box">
+        <div class="lb-title">单次实验，数据不足 · Single trial, insufficient data</div>
+        <div class="rdesc" style="font-size:15px;color:var(--text-3);">N≈5–15, 无重复 → 无法进行统计分析</div>
+        <div class="lb-fix">→ 改进：多次重复实验，在不同时段/楼层/年级进行</div>
+      </div>
+      <div class="limit-box">
+        <div class="lb-title">观察者偏差 · Observer bias</div>
+        <div class="rdesc" style="font-size:15px;color:var(--text-3);">主观判断"是否注意""是否停下"——可能不一致</div>
+        <div class="lb-fix">→ 改进：两名独立观察者 + 评分一致性检验 (inter-rater reliability)</div>
+      </div>
+      <div class="limit-box">
+        <div class="lb-title">未控制额外变量 · Extraneous variables uncontrolled</div>
+        <div class="rdesc" style="font-size:15px;color:var(--text-3);">时段、走廊宽度、学生匆忙程度、性别等未记录</div>
+        <div class="lb-fix">→ 改进：标准化程序 + 记录所有可能变量</div>
+      </div>
+      <div class="limit-box">
+        <div class="lb-title">伦理 · Ethics</div>
+        <div class="rdesc" style="font-size:15px;color:var(--text-3);">未获知情同意——旁观者不知自己被观察/拍视频</div>
+        <div class="lb-fix">→ 改进：事后告知 + 提供退出选项 + 删除视频（如不愿被记录）</div>
+      </div>
+    </div>
+    <div class="deck-footer"><span class="dim2">Slide 6 / 7</span></div>
+    <div class="notes">局限有四个：第一，单次实验数据不够，没法做统计分析——改进是多次重复。第二，观察者偏差——主观判断"注意了没""停了没"——改进是两个独立观察者加一致性检验。第三，额外变量没控制——时段、走廊宽度、学生匆忙程度都没记录——改进是标准化程序。第四，伦理——旁观者不知道自己被观察和拍视频，没有知情同意——改进是事后告知，提供退出选项，如果不愿意可以删除视频。</div>
+  </section>
+
+  <!-- 7. Step 5: Conclusion & Thanks -->
+  <section class="slide center tc" data-deck-label="Conclusion">
+    <p class="kicker">Step 5 · Conclusion</p>
+    <h2 class="h2" style="font-size:44px; max-width:900px;">
+      我们的实验虽小，但印证了一个重要的心理学现象
+      <span class="bilingual-en" style="font-size:20px; margin-top:12px;">Our small experiment echoed a powerful psychological phenomenon</span>
+    </h2>
+    <p class="lede mt-l" style="max-width:800px; font-size:22px;">
+      多数人选择走开，只有最近的人伸出了手——
+      <strong>责任分散和多数无知让"帮忙"变得不那么理所当然。</strong>
+      <br><span style="font-size:17px; color:var(--text-3);">Most walked away; only the nearest one helped — <strong>diffusion of responsibility & pluralistic ignorance at work.</strong></span>
+    </p>
+    <h1 class="h1 mt-l" style="font-size:80px; line-height:1;"><span class="gradient-text">Thank You</span></h1>
+    <p class="dim2" style="font-size:14px; margin-top:12px;">谢谢聆听 · Questions Welcome</p>
+    <div class="deck-footer"><span class="dim2">Slide 7 / 7</span></div>
+    <div class="notes">第五步是结论。我们的实验虽然很小，只有一次，但它印证了课上学的两个概念——责任分散和多数无知。多数人不帮忙不是因为他们冷漠，而是因为人多了责任感被分摊，加上看到别人都不动就以为不需要帮。谢谢大家，欢迎提问。</div>
+  </section>
+
+</deck-stage>
+<script src="./_shared/runtime.js"></script>
+<script src="./_shared/echarts-theme-sync.js"></script>
+<script>
+(function(){
+  var lastTouchTime = 0;
+  function nav(direction){
+    var key = direction === 'next' ? 'ArrowRight' : 'ArrowLeft';
+    document.dispatchEvent(new KeyboardEvent('keydown',{key:key,code:key,keyCode: direction==='next'?39:37,which:direction==='next'?39:37,bubbles:true}));
+  }
+  function handleClick(e){
+    if(Date.now() - lastTouchTime < 700){ return; }
+    var target = e.target;
+    while(target && target !== document.body){
+      if(target.tagName === 'A' || target.tagName === 'BUTTON' || target.onclick || target.getAttribute('data-no-click-nav') !== null){ return; }
+      target = target.parentNode;
+    }
+    var stage = document.querySelector('deck-stage') || document.querySelector('.slide') || document.body;
+    var rect = stage.getBoundingClientRect();
+    var x = e.clientX - rect.left;
+    if(x < rect.width * 0.5){ nav('prev'); } else { nav('next'); }
+  }
+  document.addEventListener('click', handleClick, true);
+  document.addEventListener('touchend', function(e){
+    if(e.changedTouches && e.changedTouches.length > 0){
+      lastTouchTime = Date.now();
+      var touch = e.changedTouches[0];
+      var target = e.target;
+      var skip = false;
+      while(target && target !== document.body){
+        if(target.tagName === 'A' || target.tagName === 'BUTTON' || target.onclick || target.getAttribute('data-no-click-nav') !== null){ skip = true; break; }
+        target = target.parentNode;
+      }
+      if(skip){ return; }
+      var stage = document.querySelector('deck-stage') || document.querySelector('.slide') || document.body;
+      var rect = stage.getBoundingClientRect();
+      var x = touch.clientX - rect.left;
+      if(x < rect.width * 0.5){ nav('prev'); } else { nav('next'); }
+    }
+  }, {passive: true});
+})();
+</script>
+</body>
+</html>
